@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Changed the title of the homepage{% endblock %}
+
+{% block body %}
+    {% for product in products %}
+        <img style="width: 100px; height: 100px;" src="{{product.imageURL}}"><br>
+        {{ product.name }} <br>
+        price : {{ product.price}}<br>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">add to cart</button>
+        <hr>
+    {% endfor %}
+{% endblock %}

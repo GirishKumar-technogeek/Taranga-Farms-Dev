@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block body %} 
+
+<h2>Cart Total : {{order.get_cart_total}}</h2>
+<h2>quantity: {{order.get_cart_items}}</h2>
+<hr>
+{% for item in items %}
+    <img style="width: 100px; height: 100px" src="{{item.product.imageURL}}">
+    <h1>{{item.product.name}}</h1>
+    <h2>${{item.product.price}}</h2>
+    <h3>quantity: {{item.quantity}}</h3>>
+    <h3>total : ${{item.get_total}}</h3>
+    <hr>
+{% endfor %}
+
+{% endblock %}
